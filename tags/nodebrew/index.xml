@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodebrew on sequentially randomized notes</title>
+    <link>https://sequentiallyrandomizednotes.com/tags/nodebrew/</link>
+    <description>Recent content in Nodebrew on sequentially randomized notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 17 Jun 2018 03:40:35 +0900</lastBuildDate>
+    
+	<atom:link href="https://sequentiallyrandomizednotes.com/tags/nodebrew/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>node.jsをバージョン管理 (nodebrew使用)</title>
+      <link>https://sequentiallyrandomizednotes.com/post/install_nodebrew/</link>
+      <pubDate>Sun, 17 Jun 2018 03:40:35 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/post/install_nodebrew/</guid>
+      <description>プロジェクト毎にnode.jsのバージョンが違う場合があります。
+切り替えが簡単にできれば。。。
+そのような時にはnodebrewを使えば簡単にバージョン管理ができます。
+1. 前準備 1.1. node.js 削除 もしnode.jsがインストールされている場合、下記のコマンドで削除をします。
+なお、ターミナル上で一行づつコピー&amp;amp;ペーストをして実行。
+lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom \ | while read i; do sudo rm /usr/local/${i} done sudo rm -rf /usr/local/lib/node \ /usr/local/lib/node_modules \ /var/db/receipts/org.nodejs.*  - 参考にさせていただきました -
+・MacにpkgでインストールしたNode.jsをアンインストールする手順
+2. nodebrew導入 2.1. インストール homebrewは使用せずにインストールします。
+コマンドはnodebrewのgitページの通り。
+$ curl -L git.io/nodebrew | perl - setup  2.2. 環境変数設定 インストール完了時に表示された記述を参考に環境変数を設定します。
+Installed nodebrew in $HOME/.nodebrew ======================================== Export a path to nodebrew: export PATH=$HOME/.nodebrew/current/bin:$PATH ========================================  ファイルは、~/.</description>
+    </item>
+    
+  </channel>
+</rss>

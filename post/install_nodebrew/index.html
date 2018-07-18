@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@srn_hiroaki" />
+    <meta name="twitter:creator" content="@hiroaki" />
+    <meta name="twitter:title" content="sequentially randomized notes" />
+    <meta name="twitter:description" content="Site Description" />
+    <meta name="twitter:image" content="***.png" />
+    <meta name="author" content="hiroaki">
+    <meta name="description" content="Site Description">
+    <meta name="generator" content="Hugo 0.42.1" />
+    <title>node.jsをバージョン管理 (nodebrew使用)</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://sequentiallyrandomizednotes.com//assets/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/foundation.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.1.0/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+  </head>
+  <body>
+        <nav class="common-GlobalNav">
+      <div class="common-GlobalNav_Inner">
+        <ul class="common-GlobalNav_List">
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/'>Home</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/page/about/'>About</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/categories/'>Categories</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/tags/'>Tags</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/archives/'>Archives</a></li>
+        </ul>
+      </div>
+    </nav>
+  <div class="single-Content">
+    <div class="single-Content_Inner">
+      <div class="single-Header">
+        <h1 class="single-Header_Title">node.jsをバージョン管理 (nodebrew使用)</h1>
+        
+        <div class="single-Header_Meta">
+          2018.06.17<br class="dispmobile-ib">
+          · 266 words
+          · 2 minute read
+          <div class="single-Header_MetaLower">
+            <span class="single-Header_MetaCategory">
+              
+              
+                
+                  <a class="single-Header_MetaLinks" href="https://sequentiallyrandomizednotes.com/categories/develop">develop</a>
+                
+              
+              
+            </span>
+            <span class="single-Header_MetaTags">
+              
+              
+                
+                  <a class="single-Header_MetaLinks" href="https://sequentiallyrandomizednotes.com/tags/node.js">node.js</a>
+                
+                  <a class="single-Header_MetaLinks" href="https://sequentiallyrandomizednotes.com/tags/nodebrew">nodebrew</a>
+                
+              
+              
+            </span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="single-Entry">
+        
+
+<p>プロジェクト毎にnode.jsのバージョンが違う場合があります。<br />
+切り替えが簡単にできれば。。。<br />
+そのような時にはnodebrewを使えば簡単にバージョン管理ができます。</p>
+
+<h2 id="1-前準備">1. 前準備</h2>
+
+<h3 id="1-1-node-js-削除">1.1. node.js 削除</h3>
+
+<p>もしnode.jsがインストールされている場合、下記のコマンドで削除をします。<br />
+なお、ターミナル上で一行づつコピー&amp;ペーストをして実行。</p>
+
+<pre><code class="language-bash">lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom \
+| while read i; do
+  sudo rm /usr/local/${i}
+done
+sudo rm -rf /usr/local/lib/node \
+     /usr/local/lib/node_modules \
+     /var/db/receipts/org.nodejs.*
+</code></pre>
+
+<p>- 参考にさせていただきました -<br />
+・<a href="http://qiita.com/yoshikoba/items/4906829faaaae8c73e56">MacにpkgでインストールしたNode.jsをアンインストールする手順</a></p>
+
+<h2 id="2-nodebrew導入">2. nodebrew導入</h2>
+
+<h3 id="2-1-インストール">2.1. インストール</h3>
+
+<p>homebrewは使用せずにインストールします。<br />
+コマンドは<a href="https://github.com/hokaccha/nodebrew">nodebrewのgitページ</a>の通り。</p>
+
+<pre><code class="language-bash">$ curl -L git.io/nodebrew | perl - setup
+</code></pre>
+
+<h3 id="2-2-環境変数設定">2.2. 環境変数設定</h3>
+
+<p>インストール完了時に表示された記述を参考に環境変数を設定します。</p>
+
+<pre><code class="language-bash">Installed nodebrew in $HOME/.nodebrew
+
+========================================
+Export a path to nodebrew:
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+========================================
+</code></pre>
+
+<p>ファイルは、<code>~/.bashrc</code>(もしくは<code>~/.bash_profile</code>)。</p>
+
+<pre><code class="language-bash">$ vi ~/.bashrc
+</code></pre>
+
+<p>設定を適用し確認。</p>
+
+<pre><code class="language-bash">$ source ~/.bashrc 
+$ nodebrew help
+nodebrew 1.0.0
+
+Usage:
+    nodebrew help                         Show this message
+    nodebrew install &lt;version&gt;            Download and install &lt;version&gt; (from binary)
+    nodebrew compile &lt;version&gt;            Download and install &lt;version&gt; (from source)
+    nodebrew install-binary &lt;version&gt;     Alias of `install` (For backword compatibility)
+    nodebrew uninstall &lt;version&gt;          Uninstall &lt;version&gt;
+    nodebrew use &lt;version&gt;                Use &lt;version&gt;
+    nodebrew list                         List installed versions
+    nodebrew ls                           Alias for `list`
+    nodebrew ls-remote                    List remote versions
+    nodebrew ls-all                       List remote and installed versions
+    nodebrew alias &lt;key&gt; &lt;value&gt;          Set alias
+    nodebrew unalias &lt;key&gt;                Remove alias
+    nodebrew clean &lt;version&gt; | all        Remove source file
+    nodebrew selfupdate                   Update nodebrew
+    nodebrew migrate-package &lt;version&gt;    Install global NPM packages contained in &lt;version&gt; to current version
+    nodebrew exec &lt;version&gt; -- &lt;command&gt;  Execute &lt;command&gt; using specified &lt;version&gt;
+
+Example:
+    # install
+    nodebrew install v8.9.4
+
+    # use a specific version number
+    nodebrew use v8.9.4
+</code></pre>
+
+<h2 id="3-nodebrew使用">3. nodebrew使用</h2>
+
+<h3 id="3-1-node-js一覧表示">3.1. node.js一覧表示</h3>
+
+<p>インストール可能なnode.js、<br />
+ローカルにインストールされているnode.js、<br />
+現在インストールされているnode.jsを表示させます。</p>
+
+<pre><code>$ nodebrew ls-all
+</code></pre>
+
+<p>表示結果は以下。</p>
+
+<pre><code class="language-bash">remote:
+(省略)
+v10.0.0   v10.1.0   v10.2.0   v10.2.1   v10.3.0   v10.4.0   v10.4.1   
+(省略)
+
+local:
+not installed
+
+current: none
+</code></pre>
+
+<h3 id="3-2-node-jsインストール">3.2. node.jsインストール</h3>
+
+<p>ローカル環境にnode.jsをインストールします。</p>
+
+<pre><code class="language-bash">$ nodebrew install-binary stable
+Fetching: https://nodejs.org/dist/v10.4.1/node-v10.4.1-darwin-x64.tar.gz
+######################################################################## 100.0%
+Installed successfully
+</code></pre>
+
+<p>* stableは安定板、latestとすると最新版</p>
+
+<h3 id="3-3-node-jsをローカル環境に適用">3.3. node.jsをローカル環境に適用</h3>
+
+<p>このままではnode.jsは使えない為、適用させる必要があります。</p>
+
+<pre><code class="language-bash">$ nodebrew ls
+v10.4.1
+
+current: none
+$ nodebrew use v10.4.1
+$ node -v
+v10.4.1
+</code></pre>
+
+<p><br>
+以上で、node.jsのバージョン切替えができるようになりました。</p>
+
+      </div>
+      
+        
+          <div id="disqus_thread" class="single-Disqus"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sequentially-randomized-notes'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+        
+      
+    </div>
+  </div>
+      <footer class="common-GlobalFooter">
+      <div class="common-GlobalFooter_Inner">
+        
+            <ul class="common-GlobalFooter_SocialList">
+    
+      <li class="common-GlobalFooter_SocialItem">
+        <a class="symbol" href="https://www.github.com/srn-hiro" target="_blank"><i class="fab fa-github-square"></i></a>
+      </li>
+    
+      <li class="common-GlobalFooter_SocialItem">
+        <a class="symbol" href="https://www.twitter.com/srn_hiroaki" target="_blank"><i class="fab fa-twitter-square"></i></a>
+      </li>
+    
+  </ul>
+        
+        <p class="common-GlobalFooter_Copyright">
+            &copy;&nbsp;Copyright 2018
+          <i class="fa fa-heart" aria-hidden="true"></i> hiroaki
+        </p>
+      </div>
+    </footer>
+</body>
+</html>

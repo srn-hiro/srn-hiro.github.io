@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on sequentially randomized notes</title>
+    <link>https://sequentiallyrandomizednotes.com/tags/</link>
+    <description>Recent content in Tags on sequentially randomized notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Fri, 15 Jun 2018 13:56:05 +0900</lastBuildDate>
+    
+	<atom:link href="https://sequentiallyrandomizednotes.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Memo</title>
+      <link>https://sequentiallyrandomizednotes.com/tags/memo/</link>
+      <pubDate>Fri, 15 Jun 2018 13:56:05 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/tags/memo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://sequentiallyrandomizednotes.com/tags/node.js/</link>
+      <pubDate>Sun, 17 Jun 2018 03:40:35 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodebrew</title>
+      <link>https://sequentiallyrandomizednotes.com/tags/nodebrew/</link>
+      <pubDate>Sun, 17 Jun 2018 03:40:35 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/tags/nodebrew/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@srn_hiroaki" />
+    <meta name="twitter:creator" content="@hiroaki" />
+    <meta name="twitter:title" content="sequentially randomized notes" />
+    <meta name="twitter:description" content="Site Description" />
+    <meta name="twitter:image" content="***.png" />
+    <meta name="author" content="hiroaki">
+    <meta name="description" content="Site Description">
+    <meta name="generator" content="Hugo 0.42.1" />
+    <title>Hugo と GitHub Pagesでサイトを作成</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://sequentiallyrandomizednotes.com//assets/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/foundation.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.1.0/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+  </head>
+  <body>
+        <nav class="common-GlobalNav">
+      <div class="common-GlobalNav_Inner">
+        <ul class="common-GlobalNav_List">
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/'>Home</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/page/about/'>About</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/categories/'>Categories</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/tags/'>Tags</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/archives/'>Archives</a></li>
+        </ul>
+      </div>
+    </nav>
+  <div class="single-Content">
+    <div class="single-Content_Inner">
+      <div class="single-Header">
+        <h1 class="single-Header_Title">Hugo と GitHub Pagesでサイトを作成</h1>
+        
+        <div class="single-Header_Meta">
+          2018.06.15<br class="dispmobile-ib">
+          · 28 words
+          · 1 minute read
+          <div class="single-Header_MetaLower">
+            <span class="single-Header_MetaCategory">
+              
+              
+                
+                  <a class="single-Header_MetaLinks" href="https://sequentiallyrandomizednotes.com/categories/srn">srn</a>
+                
+              
+              
+            </span>
+            <span class="single-Header_MetaTags">
+              
+              
+                
+                  <a class="single-Header_MetaLinks" href="https://sequentiallyrandomizednotes.com/tags/memo">memo</a>
+                
+              
+              
+            </span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="single-Entry">
+        <p>「アウトプットとインプットが圧倒的に足りない」<br />
+「 備忘録的なものをアップしたい」</p>
+
+<p>と、日頃から思いつつも何もできていなかった為、<br />
+ 瞬発的にページを作成しました。</p>
+
+<p>Wordpressで作成するつもりだったけれども、</p>
+
+<ul>
+<li>普段からMarkdownで作業メモ等を作成している</li>
+<li>WordpressファイルをGithub管理したいと思っていた
+(Githubに興味があった。)</li>
+<li>Wordpressからの作成だとまとまった時間が必要かも</li>
+<li>好奇心
+<br /></li>
+</ul>
+
+<p>などを理由に、Hugoでサイトを製作して<br />
+GitHub Pages でホスティングすることにしました。</p>
+
+<p>サイト製作にあたって考えたことは以下。<br />
+  1. 一旦、テーマは配布のものを使用する
+  2. コメント欄を導入する<br />
+  3. ドメイン取得をする<br />
+  4. HTTPS化も行う</p>
+
+<p>1については、ゆくゆくはテーマの自作を目標に！<br />
+3に関しては、タイミングの良いことに<a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/">GitHubが公式にカスタムドメインのHTTPS配信をサポートしていた</a>ので、
+利用させていただきました。</p>
+
+<p>以上、まだHugoについても全然分かっていないので学習していければ良いです。</p>
+
+      </div>
+      
+        
+          <div id="disqus_thread" class="single-Disqus"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sequentially-randomized-notes'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+        
+      
+    </div>
+  </div>
+      <footer class="common-GlobalFooter">
+      <div class="common-GlobalFooter_Inner">
+        
+            <ul class="common-GlobalFooter_SocialList">
+    
+      <li class="common-GlobalFooter_SocialItem">
+        <a class="symbol" href="https://www.github.com/srn-hiro" target="_blank"><i class="fab fa-github-square"></i></a>
+      </li>
+    
+      <li class="common-GlobalFooter_SocialItem">
+        <a class="symbol" href="https://www.twitter.com/srn_hiroaki" target="_blank"><i class="fab fa-twitter-square"></i></a>
+      </li>
+    
+  </ul>
+        
+        <p class="common-GlobalFooter_Copyright">
+            &copy;&nbsp;Copyright 2018
+          <i class="fa fa-heart" aria-hidden="true"></i> hiroaki
+        </p>
+      </div>
+    </footer>
+</body>
+</html>

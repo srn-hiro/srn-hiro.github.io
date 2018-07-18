@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on sequentially randomized notes</title>
+    <link>https://sequentiallyrandomizednotes.com/categories/</link>
+    <description>Recent content in Categories on sequentially randomized notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    
+	<atom:link href="https://sequentiallyrandomizednotes.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Develop</title>
+      <link>https://sequentiallyrandomizednotes.com/categories/develop/</link>
+      <pubDate>Sun, 17 Jun 2018 03:40:35 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/categories/develop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Srn</title>
+      <link>https://sequentiallyrandomizednotes.com/categories/srn/</link>
+      <pubDate>Fri, 15 Jun 2018 13:56:05 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/categories/srn/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

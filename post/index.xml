@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on sequentially randomized notes</title>
+    <link>https://sequentiallyrandomizednotes.com/post/</link>
+    <description>Recent content in Posts on sequentially randomized notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 17 Jun 2018 03:40:35 +0900</lastBuildDate>
+    
+	<atom:link href="https://sequentiallyrandomizednotes.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>node.jsをバージョン管理 (nodebrew使用)</title>
+      <link>https://sequentiallyrandomizednotes.com/post/install_nodebrew/</link>
+      <pubDate>Sun, 17 Jun 2018 03:40:35 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/post/install_nodebrew/</guid>
+      <description>プロジェクト毎にnode.jsのバージョンが違う場合があります。
+切り替えが簡単にできれば。。。
+そのような時にはnodebrewを使えば簡単にバージョン管理ができます。
+1. 前準備 1.1. node.js 削除 もしnode.jsがインストールされている場合、下記のコマンドで削除をします。
+なお、ターミナル上で一行づつコピー&amp;amp;ペーストをして実行。
+lsbom -f -l -s -pf /var/db/receipts/org.nodejs.node.pkg.bom \ | while read i; do sudo rm /usr/local/${i} done sudo rm -rf /usr/local/lib/node \ /usr/local/lib/node_modules \ /var/db/receipts/org.nodejs.*  - 参考にさせていただきました -
+・MacにpkgでインストールしたNode.jsをアンインストールする手順
+2. nodebrew導入 2.1. インストール homebrewは使用せずにインストールします。
+コマンドはnodebrewのgitページの通り。
+$ curl -L git.io/nodebrew | perl - setup  2.2. 環境変数設定 インストール完了時に表示された記述を参考に環境変数を設定します。
+Installed nodebrew in $HOME/.nodebrew ======================================== Export a path to nodebrew: export PATH=$HOME/.nodebrew/current/bin:$PATH ========================================  ファイルは、~/.</description>
+    </item>
+    
+    <item>
+      <title>Hugo と GitHub Pagesでサイトを作成</title>
+      <link>https://sequentiallyrandomizednotes.com/post/myfirstentry/</link>
+      <pubDate>Fri, 15 Jun 2018 13:56:05 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/post/myfirstentry/</guid>
+      <description>「アウトプットとインプットが圧倒的に足りない」
+「 備忘録的なものをアップしたい」
+と、日頃から思いつつも何もできていなかった為、
+瞬発的にページを作成しました。
+Wordpressで作成するつもりだったけれども、
+ 普段からMarkdownで作業メモ等を作成している WordpressファイルをGithub管理したいと思っていた (Githubに興味があった。) Wordpressからの作成だとまとまった時間が必要かも 好奇心   などを理由に、Hugoでサイトを製作して
+GitHub Pages でホスティングすることにしました。
+サイト製作にあたって考えたことは以下。
+1. 一旦、テーマは配布のものを使用する 2. コメント欄を導入する
+3. ドメイン取得をする
+4. HTTPS化も行う
+1については、ゆくゆくはテーマの自作を目標に！
+3に関しては、タイミングの良いことにGitHubが公式にカスタムドメインのHTTPS配信をサポートしていたので、 利用させていただきました。
+以上、まだHugoについても全然分かっていないので学習していければ良いです。</description>
+    </item>
+    
+  </channel>
+</rss>
