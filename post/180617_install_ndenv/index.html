@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@srn_hiroaki" />
+    <meta name="twitter:creator" content="@hiroaki" />
+    <meta name="twitter:title" content="sequentially randomized notes" />
+    <meta name="twitter:description" content="Site Description" />
+    <meta name="twitter:image" content="***.png" />
+    <meta name="author" content="hiroaki">
+    <meta name="description" content="Site Description">
+    <meta name="generator" content="Hugo 0.42.1" />
+    <title>node.jsをバージョン管理 (ndenv使用)</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity="sha384-TbilV5Lbhlwdyc4RuIV/JhD8NR+BfMrvz4BL5QFa2we1hQu6wvREr3v6XSRfCTRp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity="sha384-7xAnn7Zm3QC1jFjVc1A6v/toepoG3JXboQYzbM0jrPzou9OFXm/fY6Z/XiIebl/k" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://sequentiallyrandomizednotes.com//assets/styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/foundation.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.1.0/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+  </head>
+  <body>
+        <nav class="common-GlobalNav">
+      <div class="common-GlobalNav_Inner">
+        <ul class="common-GlobalNav_List">
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/'>Home</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/page/about/'>About</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/categories/'>Categories</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/tags/'>Tags</a></li>
+          <li class="common-GlobalNav_Items"><a class="common-GlobalNav_Link" href='https://sequentiallyrandomizednotes.com/archives/'>Archives</a></li>
+        </ul>
+      </div>
+    </nav>
+  <div class="single-Content">
+    <div class="single-Content_Inner">
+      <div class="single-Header">
+        <h1 class="single-Header_Title">node.jsをバージョン管理 (ndenv使用)</h1>
+        
+        <div class="single-Header_Meta">
+          2018.06.17<br class="dispmobile-ib">
+          <div class="single-Header_MetaLower">
+            <span class="single-Header_MetaCategory">
+              
+              
+                
+                  <a class="single-Header_MetaLinks" href="https://sequentiallyrandomizednotes.com/categories/develop">develop</a>
+                
+              
+              
+            </span>
+            <span class="single-Header_MetaTags">
+              
+              
+                
+                  <a class="single-Header_MetaLinks" href="https://sequentiallyrandomizednotes.com/tags/node.js">node.js</a>
+                
+                  <a class="single-Header_MetaLinks" href="https://sequentiallyrandomizednotes.com/tags/ndenv">ndenv</a>
+                
+              
+              
+            </span>
+          </div>
+        </div>
+        
+      </div>
+      <div class="single-Entry">
+        
+
+<p>nodebrewを使ってnode,jsを管理していましたが、<br />
+案件毎にコマンド打つのも面倒に。。<br />
+それに案件で使用しているバージョンを確認するのも大変でした。</p>
+
+<p>なんてことを考えていたら、ndenvというツールがあることを知りました。<br />
+ディレクトリ毎(案件毎)にバージョンを自動的に変更してくれるスグレモノでした。</p>
+
+<h2 id="1-前準備-nodebrew削除">1. 前準備 (nodebrew削除)</h2>
+
+<h3 id="1-1-既存環境確認">1.1. 既存環境確認</h3>
+
+<p>念のため、削除前に既存環境で使用していたnodeを確認しました。<br />
+(必要？)</p>
+
+<pre><code class="language-bash">$ nodebrew ls
+v5.12.0
+v6.10.3
+v7.9.0
+v8.2.1
+v8.8.1
+v9.2.0
+v9.5.0
+</code></pre>
+
+<h3 id="1-2-環境変数削除">1.2. 環境変数削除</h3>
+
+<pre><code class="language-bash">  vi ~/.bashrc
+</code></pre>
+
+<p>下記を削除</p>
+
+<pre><code>export PATH=$HOME/.nodebrew/current/bin:$PATH:
+</code></pre>
+
+<h3 id="1-3-nodebrew削除">1.3. nodebrew削除</h3>
+
+<p>ホームディレクトリ配下にある<code>.nodebrew</code>を削除。</p>
+
+<h3 id="1-4-nodebrew削除確認">1.4. nodebrew削除確認</h3>
+
+<pre><code class="language-bash">$ nodebrew -v
+-bash: /Users/&lt;ユーザー&gt;/.nodebrew/current/bin/nodebrew: No such file or directory
+</code></pre>
+
+<h2 id="2-ndenv導入">2. ndenv導入</h2>
+
+<h3 id="2-1-インストール">2.1. インストール</h3>
+
+<p>homebrew経由でndenvをインストールします。</p>
+
+<pre><code class="language-bash">$ brew install ndenv
+</code></pre>
+
+<h3 id="2-2-環境変数追記">2.2. 環境変数追記</h3>
+
+<p><code>~/.bashrc</code>(もしくは<code>~/.bash_profile</code>)を修正し、 　
+環境変数を設定します。</p>
+
+<pre><code class="language-bash">  vi ~/.bashrc
+</code></pre>
+
+<p>追記内容は下記</p>
+
+<pre><code>export PATH=&quot;$HOME/.ndenv/bin:$PATH&quot;
+eval &quot;$(ndenv init -)&quot;
+</code></pre>
+
+<p>変更内容を適用させます。</p>
+
+<pre><code class="language-bash">source ~/.bashrc
+</code></pre>
+
+<h3 id="2-3-node-build導入">2.3. node-build導入</h3>
+
+<p>ndenvはインストールできましたが、<br />
+このままでは肝心の<code>ndenv install</code>が実行できません。<br />
+その為、node-buildをインストールします。</p>
+
+<pre><code class="language-bash">git clone https://github.com/riywo/node-build.git $(ndenv root)/plugins/node-build
+</code></pre>
+
+<h2 id="3-ndenv使用">3. ndenv使用</h2>
+
+<h3 id="3-1-node-jsリストの表示">3.1. node.jsリストの表示</h3>
+
+<p>インストール可能なnode.jsリストを表示させる</p>
+
+<pre><code class="language-bash">$ ndenv install -l
+</code></pre>
+
+<h3 id="3-2-node-jsインストール">3.2. node.jsインストール</h3>
+
+<p>希望のバージョンのnode.jsをインストールします。</p>
+
+<pre><code class="language-bash">$ ndenv install [version]
+</code></pre>
+
+<h3 id="3-3-グローバルでのバージョンを指定">3.3. グローバルでのバージョンを指定</h3>
+
+<p>ローカルでデフォルトで使用するバージョンを指定します。</p>
+
+<pre><code class="language-bash">$ ndenv global [version]
+$ ndenv rehash
+</code></pre>
+
+<p>グローバル設定は<code>~/.ndenv/versions/</code>ディレクトリを参照している。<br />
+その為、設定を解除する為には、<code>~/.ndenv/versions/</code>を削除すれば良い。</p>
+
+<pre><code class="language-bash">$ ll ~/.ndenv/versions/
+total 0
+drwxr-xr-x   3 ******  staff  102  6  1 11:16 .
+drwxr-xr-x   5 ******  staff  170  6  1 11:03 ..
+drwxr-xr-x  10 ******  staff  340  6  1 11:19 v8.11.2
+</code></pre>
+
+<h3 id="3-4-ローカルでのバージョンを指定">3.4. ローカルでのバージョンを指定</h3>
+
+<p>下記を実行することでディレクトリ毎にバージョンを設定できます。</p>
+
+<pre><code class="language-bash">$ ndenv local [version]
+</code></pre>
+
+<p>実行するとディレクトリ内に<code>.node-version</code>ファイルが作成されます。<br />
+ローカルでの指定を解除する為には、このファイルを削除します。</p>
+
+<pre><code class="language-bash">$ cat .node-version
+v8.11.2
+</code></pre>
+
+<h3 id="3-5-実行結果">3.5. 実行結果</h3>
+
+<p>例として、下記の環境を作りました。</p>
+
+<ul>
+<li>グローバルではv8.11.2を指定</li>
+<li>Aディレクトリではローカルは指定なし</li>
+<li>Bディレクトリではローカルをv8.11.3に指定</li>
+</ul>
+
+<p>Aディレクトリの結果</p>
+
+<pre><code>$pwd
+/Users/&lt;ユーザー&gt;/testA
+$ ls .node-version
+ls: .node-version: No such file or directory
+p$ node -v
+v8.11.3
+</code></pre>
+
+<p>Bディレクトリの結果</p>
+
+<pre><code>$pwd
+/Users/&lt;ユーザー&gt;/testB
+$ ls .node-version
+.node-version
+$ cat .node-version
+v8.11.2
+$ node -v
+v8.11.2
+</code></pre>
+
+<p>無事にディレクトリを移動しただけで、<br />
+node.jsのバージョンが自動的に変更されました。</p>
+
+<p>便利！</p>
+
+<p>- 参考にさせていただきました -<br />
+・<a href="http://tnyk.jp/frontend/288/">nodebrewからndenvにして、ディレクトリ/プロジェクト毎にnodeのバージョンを指定する方法</a><br />
+・<a href="https://qiita.com/noraworld/items/462689e108c10102d51f">ndenv を使用して複数のバージョンの Node.js を管理する方法と基本的な使い方</a></p>
+
+      </div>
+      
+        
+          <div id="disqus_thread" class="single-Disqus"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'sequentially-randomized-notes'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+        
+      
+    </div>
+  </div>
+      <footer class="common-GlobalFooter">
+      <div class="common-GlobalFooter_Inner">
+        
+            <ul class="common-GlobalFooter_SocialList">
+    
+      <li class="common-GlobalFooter_SocialItem">
+        <a class="symbol" href="https://www.github.com/srn-hiro" target="_blank"><i class="fab fa-github-square"></i></a>
+      </li>
+    
+      <li class="common-GlobalFooter_SocialItem">
+        <a class="symbol" href="https://www.twitter.com/srn_hiroaki" target="_blank"><i class="fab fa-twitter-square"></i></a>
+      </li>
+    
+  </ul>
+        
+        <p class="common-GlobalFooter_Copyright">
+            &copy;&nbsp;Copyright 2018
+          <i class="fa fa-heart" aria-hidden="true"></i> hiroaki
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
