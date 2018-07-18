@@ -6,10 +6,21 @@
     <description>Recent content in Posts on sequentially randomized notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 17 Jun 2018 03:40:35 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jul 2018 15:32:42 +0900</lastBuildDate>
     
 	<atom:link href="https://sequentiallyrandomizednotes.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>テーマをカスタマイズしました</title>
+      <link>https://sequentiallyrandomizednotes.com/post/180718_update/</link>
+      <pubDate>Wed, 18 Jul 2018 15:32:42 +0900</pubDate>
+      
+      <guid>https://sequentiallyrandomizednotes.com/post/180718_update/</guid>
+      <description>やっとテーマのカスタマイズを完了。
+ブレークポイントを3つ程設けて好みの文字サイズを設定しました。 いや、そのつもりだったのですがまだ納得できない点がいっぱい。 各ページのマージン(特に見出しの箇所など。)が読みにくいので、 そこは後に修正します。
+また色々と苦労しながらも、Hugo関連ファイルをGitのSubmodule機能を使用した管理方法へ移行しました。 (実は移行の為にレポジトリを1度消去してしまった。。) 手順に関しては忘れない様に後々に記事を書きたいと思ってます。</description>
+    </item>
     
     <item>
       <title>node.jsをバージョン管理 (nodebrew使用)</title>
