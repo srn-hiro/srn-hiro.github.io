@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://sequentiallyrandomizednotes.com/post/180722_dontmissit/</loc>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://sequentiallyrandomizednotes.com/post/180718_update/</loc>
     <lastmod>2018-07-18T15:32:42+09:00</lastmod>
   </url>
@@ -29,13 +34,13 @@
   
   <url>
     <loc>https://sequentiallyrandomizednotes.com/archives/2018/</loc>
-    <lastmod>2018-07-18T15:32:42+09:00</lastmod>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sequentiallyrandomizednotes.com/archives/</loc>
-    <lastmod>2018-07-18T15:32:42+09:00</lastmod>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -51,8 +56,20 @@
   </url>
   
   <url>
+    <loc>https://sequentiallyrandomizednotes.com/tags/jamesblake/</loc>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://sequentiallyrandomizednotes.com/tags/memo/</loc>
     <lastmod>2018-07-18T15:32:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sequentiallyrandomizednotes.com/categories/music/</loc>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -82,7 +99,7 @@
   
   <url>
     <loc>https://sequentiallyrandomizednotes.com/post/</loc>
-    <lastmod>2018-07-18T15:32:42+09:00</lastmod>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -94,13 +111,19 @@
   
   <url>
     <loc>https://sequentiallyrandomizednotes.com/tags/</loc>
-    <lastmod>2018-07-18T15:32:42+09:00</lastmod>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sequentiallyrandomizednotes.com/tags/thebeatles/</loc>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sequentiallyrandomizednotes.com/</loc>
-    <lastmod>2018-07-18T15:32:42+09:00</lastmod>
+    <lastmod>2018-07-21T23:42:05+09:00</lastmod>
     <priority>0</priority>
   </url>
   
